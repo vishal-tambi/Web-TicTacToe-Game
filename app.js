@@ -49,7 +49,7 @@ const disabledboxs = () => {
 const enabledboxs = () => {
     for (let i of boxs) {
         i.disabled = false;
-        boxs.innerText = "";
+        i.innerText = "";
 
     }
 }
@@ -66,14 +66,13 @@ const checkWinner = () => {
 
         let pos0 = boxs[i[0]].innerText
         let pos1 = boxs[i[1]].innerText
-        let pos2 = boxs[i[2]].innerText
-        if (pos0 != "" && pos1 != "" && pos2 != "") {
-            if (pos0 === pos1 && pos1 === pos2) {
+        let pos2 = boxs[i[2]].innerText 
+            if (pos0 && pos1 && pos2 && pos0 === pos1 && pos1 === pos2) {
                 console.log("Look's like we got The Winner", pos0);
-                //for the last winning message makeing an finction.
+                //for the last winning message making an finction.
                 showwinner(pos0);
             }
-        }
+        
     }
 }
 
